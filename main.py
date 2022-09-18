@@ -28,7 +28,7 @@ async def main():
             station = await connect_wifi(Environment.SSID, Environment.SSID_PASSWORD)
             intra_ipaddress, _, _, _ = station.ifconfig()
             uasyncio.create_task(monitor_connection_status(station))
-            response = urequests.get("https://icanhazip.com/").text()
+            response = urequests.get("https://icanhazip.com/").text
             print("----\nIP Info:\n----")
             print(f"Internal IP Address: {intra_ipaddress}")
             print(f"External IP Address: {response}")
